@@ -24,7 +24,7 @@ public class HomeController {
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		dateFormat.setLenient(false);
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	}
@@ -40,16 +40,7 @@ public class HomeController {
 	public ModelAndView save(@ModelAttribute("employee") Employee employee) throws Exception {
 		ModelAndView mav = new ModelAndView("index");
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-		String sDate1 = "31/12/1998";
-		Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
-
-		String pattern = "yyyy-MM-dd";
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-		Date date = simpleDateFormat.parse("2018-09-09");
-		System.out.println("ddddddddd>>>>> " + date);
-
-		 System.out.println("dat:::::::: " + employee.getDob());
+		System.out.println("dat:::::::: " + employee.getDob());
 		emprepo.save(employee);
 		mav.addObject("msg", "Employee saved");
 		return mav;
