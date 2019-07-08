@@ -17,7 +17,7 @@ public class Employee {
 	private int id;
 	private String firstName;
 	private String lastName;
-	@DateTimeFormat(pattern = "dd-MM-yyyy")
+	@DateTimeFormat(pattern = "yyyy/mm/dd")  
 	private Date dob;
 
 	public Date getDob() {

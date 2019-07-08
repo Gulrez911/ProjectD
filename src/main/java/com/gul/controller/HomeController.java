@@ -37,9 +37,19 @@ public class HomeController {
 	}
 
 	@PostMapping("/save")
-	public ModelAndView save(@ModelAttribute("employee") Employee employee) {
+	public ModelAndView save(@ModelAttribute("employee") Employee employee) throws Exception {
 		ModelAndView mav = new ModelAndView("index");
-		System.out.println("dat:::::::: " + employee.getDob());
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+		String sDate1 = "31/12/1998";
+		Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
+
+		String pattern = "yyyy-MM-dd";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+		Date date = simpleDateFormat.parse("2018-09-09");
+		System.out.println("ddddddddd>>>>> " + date);
+
+		 System.out.println("dat:::::::: " + employee.getDob());
 		emprepo.save(employee);
 		mav.addObject("msg", "Employee saved");
 		return mav;

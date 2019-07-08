@@ -11,9 +11,21 @@
 <title>Insert title here</title>
 <link href="./resources/img/gear.png" rel="shortcut icon">
 <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
+<script src="./resources/js/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="stylesheet"
+		href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("#txtDate").datepicker().datepicker("setDate", new Date());
+	});
+</script>
 </head>
 <body>
-
 		<div class="container">
 				<div class="panel-body">
 						<form:form action="save" method="post" modelAttribute="employee"
@@ -36,7 +48,8 @@
 								<div class="form-group">
 										<label for="lastName" class="col-md-3 control-label">D.O.B:</label>
 										<div class="col-md-9">
-												<form:input path="dob" type="date"  cssClass="form-control" />
+												<form:input path="dob" cssClass="form-control" type="date"
+														id="txtDate" />
 										</div>
 								</div>
 								<div class="form-group">
@@ -44,7 +57,7 @@
 												<form:button class="btn btn-primary">Submit</form:button>
 										</div>
 								</div>
-								
+
 						</form:form>
 				</div>
 		</div>
