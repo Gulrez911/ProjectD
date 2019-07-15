@@ -22,6 +22,11 @@ public class HomeController {
 	@Autowired
 	EmpRepository emprepo;
 
+	@GetMapping("/test")
+	public ModelAndView test() {
+		return new ModelAndView("test");
+	}
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");

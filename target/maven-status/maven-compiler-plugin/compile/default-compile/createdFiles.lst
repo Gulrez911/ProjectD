@@ -1,0 +1,7 @@
+com\gul\controller\HomeController.class
+com\gul\entity\Employee.class
+com\gul\config\PersistenceJPAConfig.class
+com\gul\entity\Student.class
+com\gul\config\AppInitilizer.class
+com\gul\config\WebConfig.class
+com\gul\repository\EmpRepository.class
